@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fiche 2 — Problèmes (avec corrigés)</title>
+  <style>
+    :root {
+      --accent: #0b5394;
+      --box: #dbe9ff;
+    }
+    @page {
+      margin: 20mm;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-top: 28px;
+      color: var(--accent);
+    }
+    h3 {
+      margin-top: 18px;
+    }
+    .exercice, .corrige {
+      margin-bottom: 40px;
+      break-inside: avoid;
+    }
+    .encadre {
+      border: 2px solid var(--accent);
+      background: var(--box);
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+    .center {
+      text-align: center;
+    }
+    img {
+      display: block;
+      margin: 12px auto;
+      max-width: 100%;
+      height: auto;
+    }
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+    ol { padding-left: 20px; }
+    em.math { font-style: normal; font-family: 'Times New Roman', serif; }
+    .note { font-style: italic; color:#555; }
+  </style>
+</head>
+<body>
+
+<h1>Fiche 2 — Problèmes</h1>
+
+<div class="exercice">
+  <h2>🔷 Problème 1. Une fonction définie à partir d’une autre</h2>
+  <p>On considère une fonction impaire <em>f</em> définie sur &reals;.<br>
+  On sait que l’image par <em>f</em> de 1 est &radic;2.<br>
+  Soit <em>g</em> la fonction définie sur &reals; par g(x) = (2x³ + x) &times; f(x)</em></p>
+  <ol>
+    <li>Étudier la parité de <em>g</em>.</li>
+    <li>Calculer l’image par <em>g</em> de (−1).</li>
+    <li><b>Modification :</b> Sachant que l’image par <em>g</em> de 2 est <b>3</b>, en déduire <em>f(−2)</em>.</li>
+  </ol>
+</div>
+
+<div class="exercice">
+  <h2>📝 Problème 2. Somme de fonctions paires et impaires</h2>
+  <p>Soit <em>f</em> une fonction définie sur &reals; dont on ne connaît pas la parité.</p>
+  <ol>
+    <li>Soit <em>g</em> la fonction définie sur &reals; par g(x) = ( f(x) + f(−x) ) / 2</p>
+      Étudier la parité de la fonction g.
+    </li>
+    <li>Soit <em>h</em> la fonction définie sur &reals; par h(x) = ( f(x) − f(−x) ) / 2</p>
+      Étudier la parité de la fonction h.
+    </li>
+    <li>En déduire que toute fonction définie sur &reals; peut s’écrire comme la somme d’une fonction paire et d’une fonction impaire.</li>
+  </ol>
+</div>
+
+<div class="exercice">
+  <h2> 📝 Exercice 3. Vrai ou Faux</h2>
+  <div class="encadre">
+    <b>Affirmation 1</b><br><br>
+    Soit g et h deux fonctions impaires, définies sur un intervalle I, centré en 0.<br>
+    Alors la fonction f = g × h définie sur I est une fonction paire.
+  </div>
+</div>
+
+
+<div class="page-break"></div>
+
+<h1>Corrigés</h1>
+
+<div class="corrige">
+  <h2>Corrigé du problème 1</h2>
+  <ol>
+    <li><b>Parité de g.</b><br>
+      Pour tout réel x, comme f est impaire, f(−x) = −f(x). Alors g(−x) = (2(−x)³ + (−x)) f(−x) = (−2x³ − x)(−f(x)) = (2x³ + x) f(x) = g(x).</div>
+      Donc g est <b>paire</b>.
+    </li>
+    <li><b>g(−1).</b><br>
+      g(−1) = (2(−1)³ + (−1)) f(−1) = (−3) f(−1) = (−3)(−f(1)) = 3&radic;2.
+    </li>
+    <li><b>Détermination de f(−2).</b><br>
+      g(2) = (2·2³ + 2) f(2) = 18 f(2). Or on donne g(2) = 3, donc f(2) = 3/18 = 1/6.<br>
+      Comme f est impaire, f(−2) = −f(2) = <b>−1/6</b>.
+    </li>
+  </ol>
+</div>
+
+<div class="corrige">
+  <h2>Corrigé du problème 2</h2>
+  <ol>
+    <li><b>Parité de g.</b> Pour tout x, g(−x) = (f(−x) + f(x))/2 = g(x)
+      donc g est <b>paire</b>.
+    </li>
+    <li><b>Parité de h.</b> Pour tout x, h(−x) = (f(−x) − f(x))/2 = −(f(x) − f(−x))/2 = −h(x)
+      donc h est <b>impaire</b>.
+    </li>
+    <li><b>Décomposition.</b> Pour tout x, g(x) + h(x) = (f(x)+f(−x))/2 + (f(x)−f(−x))/2 = f(x).
+      Ainsi toute fonction f s’écrit comme somme d’une paire et d’une impaire.
+    </li>
+  </ol>
+</div>
+
+<div class="corrige">
+  <h2>Corrigé de l’exercice 3</h2>
+  <p>Si g et h sont impaires, alors pour tout x : g(−x) = −g(x) et h(−x) = −h(x). D’où f(−x) = g(−x) h(−x) = (−g(x))(−h(x)) = g(x)h(x) = f(x).</p>
+  <p>La fonction f = g × h est donc <b>paire</b>. L’affirmation est vraie.</p>
+</div>
+
+</body>
+</html>

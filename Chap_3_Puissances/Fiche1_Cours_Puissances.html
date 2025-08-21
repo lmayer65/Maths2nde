@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Fiche 1 — Partie 2 : Puissances (révisions)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 1cm;
+    line-height: 1.6;
+    max-width: 900px;
+}
+h1, h2, h3, h4 {
+    color: #2c3e50;
+}
+.definition, .remarque, .propriete, .exemple {
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    padding: 1em;
+    margin: 1.5em 0;
+}
+.definition { background-color: #fefefe; border-left: 6px solid #3366cc; }
+.remarque { background-color: #fffaf0; border-left: 6px solid orange; }
+.propriete { background-color: #eef6ff; border-left: 6px solid #3399ff; }
+.exemple { background-color: #fff7f0; border-left: 6px solid #ff9900; }
+.titre-definition, .titre-remarque, .titre-propriete, .titre-exemple {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+.math {
+    font-family: "Cambria Math", serif;
+    font-style: italic;
+}
+.footer {
+    text-align: right;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 3em;
+}
+
+
+/* Pagination propre : éviter les coupures entre blocs */
+.no-break, .definition, .propriete, .exemple, .remarque { break-inside: avoid; page-break-inside: avoid; }
+@page { margin: 1.5cm; }
+@media print { .page-break { break-after: page; page-break-after: always; } }
+/* Neutraliser l'italique éventuel pour les énoncés */
+i, em { font-style: normal !important; }
+h1, h2, h3 { margin-top: 0.2em; margin-bottom: 0.4em; }
+</style>
+</head>
+<body>
+<h1>⚡ Fiche 1 — Partie 2 : Puissances (révisions)</h1>
+
+<section class="definition no-break">
+  <h2>📘 Rappels</h2>
+  <p>a<sup>4</sup> = a × a × a × a</p>
+  <p>De façon générale :</p>
+  <p>a<sup>n</sup> = a × a × a × a × … × a <span>(n fois)</span></p>
+  <p>a est un nombre non nul et n est un entier non nul.</p>
+  <ul>
+    <li>a<sup>1</sup> = a</li>
+    <li>a<sup>0</sup> = 1</li>
+    <li>0<sup>n</sup> = 0</li>
+    <li>1<sup>n</sup> = 1</li>
+  </ul>
+</section>
+
+<section class="remarque no-break">
+  <h2>⚠️ Attention aux signes !</h2>
+  <p>Ne pas confondre :</p>
+  <p>(−3)<sup>4</sup> = (−3) × (−3) × (−3) × (−3) = 81</p>
+  <p>et : −3<sup>4</sup> = −3 × 3 × 3 × 3 = −81</p>
+</section>
+
+<section class="exemple no-break">
+  <h2>📝 Exercice</h2>
+  <p>Calculer de même en appliquant la règle des signes :</p>
+  <p>(−5)<sup>2</sup> ; −1<sup>2</sup> ; (−1)<sup>2</sup> ; −3<sup>3</sup> ; (−2)<sup>2</sup> ; −7<sup>2</sup> ; (−9)<sup>0</sup> ; −9<sup>0</sup></p>
+  <p><strong>Réponses :</strong> 25 ; −1 ; 1 ; −27 ; 4 ; −49 ; 1 ; −1</p>
+</section>
+
+<section class="propriete no-break">
+  <h2>🧮 Opérations sur les puissances</h2>
+  <p>Avec n et p entiers relatifs :</p>
+  <ul>
+    <li>a<sup>n</sup> × a<sup>p</sup> = a<sup>(n+p)</sup></li>
+    <li>a<sup>n</sup> / a<sup>p</sup> = a<sup>(n−p)</sup></li>
+    <li>(a<sup>n</sup>)<sup>p</sup> = a<sup>(n×p)</sup></li>
+    <li>(a × b)<sup>n</sup> = a<sup>n</sup> × b<sup>n</sup></li>
+  </ul>
+  <ul>
+    <li>a<sup>−1</sup> = 1 / a</li>
+    <li>a<sup>−n</sup> = 1 / a<sup>n</sup></li>
+  </ul>
+</section>
+
+<section class="exemple no-break">
+  <h2>🛠️ Méthode — Calculs sur les puissances</h2>
+  <h3>Exprimer sous la forme d’une seule puissance</h3>
+  <p>
+    A = 1 / 4<sup>2</sup> &nbsp;&nbsp;&nbsp;
+    B = 4<sup>5</sup> × 4<sup>7</sup> &nbsp;&nbsp;&nbsp;
+    C = 5<sup>4</sup> / 5<sup>6</sup> &nbsp;&nbsp;&nbsp;
+    D = 7<sup>3</sup> × (7<sup>2</sup>)<sup>6</sup> &nbsp;&nbsp;&nbsp;
+    E = 6<sup>7</sup> × 9<sup>7</sup>
+  </p>
+  <h3>✅ Correction</h3>
+  <p>
+    A = 1 / 4<sup>2</sup> = 4<sup>−2</sup><br>
+    B = 4<sup>5</sup> × 4<sup>7</sup> = 4<sup>5+7</sup> = 4<sup>12</sup><br>
+    C = 5<sup>4</sup> / 5<sup>6</sup> = 5<sup>4−6</sup> = 5<sup>−2</sup><br>
+    D = 7<sup>3</sup> × (7<sup>2</sup>)<sup>6</sup> = 7<sup>3</sup> × 7<sup>12</sup> = 7<sup>15</sup><br>
+    E = 6<sup>7</sup> × 9<sup>7</sup> = (6×9)<sup>7</sup> = 54<sup>7</sup>
+  </p>
+</section>
+
+<section class="propriete no-break">
+  <h2>🔟 Puissances de 10</h2>
+  <h3>a) Écrire sous la forme 10<sup>n</sup> ou 10<sup>−n</sup></h3>
+  <p>
+    A = 10<sup>4</sup> × 10<sup>7</sup><br>
+    B = 10<sup>−4</sup> / 10<sup>5</sup><br>
+    C = (10<sup>2</sup>)<sup>−6</sup><br>
+    D = 10<sup>−4</sup> × (10<sup>3</sup>)<sup>−1</sup>
+  </p>
+  <h3>✅ Correction a)</h3>
+  <p>
+    A = 10<sup>4+7</sup> = 10<sup>11</sup><br>
+    B = 10<sup>−4−5</sup> = 10<sup>−9</sup><br>
+    C = 10<sup>2×(−6)</sup> = 10<sup>−12</sup><br>
+    D = 10<sup>−4</sup> × 10<sup>3×(−1)</sup> = 10<sup>−4−3</sup> = 10<sup>−7</sup>
+  </p>
+
+  <h3>b) Écrire en notation scientifique</h3>
+  <p>
+    A = 4 × 7 × 10<sup>−5</sup> × 10<sup>−8</sup><br>
+    B = (7 × 10<sup>−4</sup> × 5 × 10<sup>8</sup>) / (56 × 10<sup>−9</sup>)<br>
+    C = (32 × 10<sup>−4</sup> + 6 × 10<sup>−3</sup>) / (2 × 10<sup>−5</sup>)
+  </p>
+  <h3>✅ Correction b)</h3>
+  <p>
+    A = 28 × 10<sup>−13</sup> = 2,8 × 10<sup>−12</sup><br><br>
+    B = (7×5)/56 × (10<sup>−4</sup>×10<sup>8</sup>) / 10<sup>−9</sup> = 0,625 × 10<sup>13</sup> = 6,25 × 10<sup>12</sup><br><br>
+    C = (0,0032 + 0,006) / (2 × 10<sup>−5</sup>) = 0,0092 / (2 × 10<sup>−5</sup>) = 0,0046 × 10<sup>5</sup> = 4,6 × 10<sup>2</sup>
+  </p>
+</section>
+
+</body>
+</html>

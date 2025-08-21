@@ -1,0 +1,3 @@
+Le site math-gpt.org : https://math-gpt.org/
+
+Version gratuite (très) limitée, résout équations, dérivées, intégrales.

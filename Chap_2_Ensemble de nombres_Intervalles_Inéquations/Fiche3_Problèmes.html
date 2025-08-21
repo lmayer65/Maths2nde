@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fiche3_Problèmes — Escaliers & Moquettes</title>
+  <!-- Polyfill + MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+    h1 { text-align: center; color:#003366; }
+    h2 { color:#003366; border-bottom:2px solid #003366; padding-bottom:5px; margin-top:40px; }
+    .exo, .corr { margin-bottom: 36px; }
+    .corr { background:#f0fff0; padding:15px; border-left:4px solid #4CAF50; }
+    .program-box { background:#fff7e6; border-left:4px solid #f39c12; padding:12px 16px; margin:12px 0; }
+    .page-break { page-break-before: always; }
+    @page { size: A4; margin: 20mm; }
+    @media print { .print-footer { position: fixed; bottom: 10mm; right: 20mm; font-size: 12px; color: #555; } }
+    img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+
+<h1><u>Fiche Problèmes — Escalier & Moquettes</u></h1>
+
+<div class="exo">
+  <h2>PROBLÈME 1 — Escalier et normes</h2>
+  <p>Pour construire un escalier, il faut respecter certaines normes :</p>
+  <ul>
+    <li>Hauteur de marche : entre 17 et 21 cm</li>
+    <li>Giron de marche : entre 21 et 27 cm</li>
+    <li>Largeur de l’escalier : &gt; 70 cm</li>
+    <li>Loi de Blondel : \(2\,h + g \in [60;64]\) (en cm)</li>
+  </ul>
+  
+  <p><img alt="Schémas des 6 pièces" src="escaliers.png" /></p>
+  
+  
+  <p>
+  On dispose d’une longueur horizontale de 3 m et d’une hauteur de 2,60 m entre le sol et le palier.
+  En respectant les normes, combien de marches faut‑il prévoir ? Préciser la hauteur et le giron d’une marche.
+  </p>
+</div>
+
+<div class="exo page-break">
+  <h2>PROBLÈME 2 — Moquettes</h2>
+  <p>Voici le plan des 6 pièces d’un appartement (dimensions en cm). Dans chaque pièce, la partie jaune doit être recouverte de moquette.</p>
+  <p><img alt="Schémas des 6 pièces" src="moquettes.png" /></p>
+
+  <ol>
+    <li><b>a)</b> L’expression \(180\,b - 200\,a\) représente la surface de moquette nécessaire pour recouvrir l’une des pièces. Laquelle ?<br>
+        <b>b)</b> Donner, pour chacune des autres pièces, une expression de la surface de moquette (en cm²) en fonction des dimensions indiquées.
+    </li>
+    <li>Développer et réduire si possible chacune des expressions précédentes.</li>
+    <li>Donner les résultats en m² :
+      <ol type="a">
+        <li>Calculer les surfaces de moquette nécessaires aux pièces 1 et 2 pour \(x=60\) et \(a=500\).</li>
+        <li>Même question pour la pièce 4 avec \(x=50\), \(y=100\), \(a=160\).</li>
+        <li>Même question pour la pièce 6 avec \(x=40\), \(y=100\), \(z=90\).</li>
+      </ol>
+    </li>
+    <li>
+      <ol type="a">
+        <li>Trouver \(x\) pour que la surface de la pièce 1 soit \(11{,}04\,\text{m}^2\).</li>
+        <li>Trouver \(a\) pour que la surface de la pièce 2 soit \(7{,}704\,\text{m}^2\).</li>
+        <li>Trouver \(x\) pour que la surface de la pièce 5 soit \(1{,}17\,\text{m}^2\).</li>
+      </ol>
+    </li>
+    <li>Proposer des valeurs de \(a\) et \(b\) pour que la surface de moquette de la pièce 3 soit \(34{,}760\,\text{cm}^2\).</li>
+  </ol>
+</div>
+
+
+<div class="exo page-break">
+  <h2>PROBLÈME 3 — Double‑porte</h2>
+
+  <p>
+    Lorsqu’on ouvre les battants d’une double‑porte jusqu’à une distance de 10&nbsp;cm du seuil de la porte,
+    on laisse une ouverture de 2&nbsp;cm.<br>
+    Quelle est la largeur de la double‑porte ?
+  </p>
+  
+  <p><img src="battants.png" alt="Schéma double-porte"></p>
+</div>
+
+<div class="exo page-break">
+  <h2>PROBLÈME 4 — Bambou brisé</h2>
+
+  <p>
+    Un bambou de 1&nbsp;mètre de hauteur, lorsqu’il est brisé,
+    a son extrémité qui touche le sol à une distance de 30&nbsp;cm de sa base.<br>
+    À quelle hauteur a-t-il été brisé ?
+  </p>
+  
+  <p><img src="bambou.png" alt="Schéma bambou brisé"></p>
+</div>
+
+
+
+<h2>📌 Réponses </h2>
+<div class="corr">
+  <ul>
+    <li><b>Problème 1 (Escalier)</b> : 13 marches — hauteur \(h = 20\,\text{cm}\), giron \(g \approx 23\,\text{cm}\).</li>
+    <li><b>Problème 2 (Moquettes)</b> :
+      <ul>
+        <li>1a) Pièce concernée : <b>pièce 3</b>.</li>
+        <li>2) Surfaces (cm²) :
+          <ul>
+            <li>Pièce 1 : \(S_1 = 120000 - 300x\).</li>
+            <li>Pièce 2 : \(S_2 = 240\,a\).</li>
+            <li>Pièce 3 : \(S_3 = 180\,b - 200\,a\).</li>
+            <li>Pièce 4 : \(S_4 = 500\,a - (500 - x)(a - y)\).</li>
+            <li>Pièce 5 : \(S_5 = 16000 - 200x\).</li>
+            <li>Pièce 6 : <i>à préciser selon la largeur exacte du rectangle inférieur grisé</i>.</li>
+          </ul>
+        </li>
+        <li>3) En m² :
+          <ul>
+            <li>Pièces 1 &amp; 2 (\(x=60\), \(a=500\)) : \(S_1 = 10{,}2\,\text{m}^2\), \(S_2 = 12{,}0\,\text{m}^2\).</li>
+            <li>Pièce 4 (\(x=50\), \(y=100\), \(a=160\)) : \(S_4 = 7{,}84\,\text{m}^2\).</li>
+            <li>Pièce 6 (\(x=40\), \(y=100\), \(z=90\)) : <i>indéterminée sans précision supplémentaire</i>.</li>
+          </ul>
+        </li>
+        <li>4) Longueurs :
+          <ul>
+            <li>4a) Pièce 1 : \(x = 130\).</li>
+            <li>4b) Pièce 2 : \(a = 482\).</li>
+            <li>4c) Pièce 5 : \(x = 83\).</li>
+          </ul>
+        </li>
+        <li>5) Exemple de valeurs pour la pièce 3 : \(a = 20\) et \(b = 229\).</li>
+      </ul>
+    </li>
+	<li><b>Problème 3 (Double‑porte)</b> : largeur ≈ 71 cm.</li>
+	<li><b>Problème 4 (Bambou)</b> : hauteur de la cassure ≈ 45 cm.</li>
+
+  </ul>
+</div>
+
+</body>
+</html>
