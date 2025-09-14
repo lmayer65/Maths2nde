@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Évaluation — Développement, Factorisation, Ensembles & Intervalles (1h)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- MathJax config: force \( \) inline and \[ \] display -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root{
+      --c1:#1E88E5; --c2:#D81B60; --c3:#00897B; --ink:#2C3E50; --muted:#607D8B;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Arial,Helvetica,sans-serif; margin:32px; line-height:1.7; color:var(--ink);}
+    h1,h2,h3{margin:0 0 12px 0}
+    h1{color:var(--c1); text-align:center; font-size:2.1rem}
+    h2{color:var(--c2); font-size:1.5rem; border-bottom:2px solid var(--c2); padding-bottom:6px; margin-top:28px}
+    h3{color:var(--c3); font-size:1.15rem; margin-top:20px}
+    .exo,.corr{margin-bottom:22px}
+    .note{color:var(--muted); font-size:.92rem}
+    u{ text-decoration-color:#FF5722; }
+    .math-left mjx-container[jax="CHTML"][display="true"]{text-align:left!important;}
+    table{border-collapse:collapse; width:100%}
+    th,td{border:1px solid #bbb; padding:8px; text-align:center}
+    .tag{display:inline-block; font-size:.85rem; padding:2px 8px; border-radius:999px; background:#e3f2fd; color:#0d47a1; margin-left:6px}
+    /* Pagination / coupures soignées */
+    .page-break{page-break-before:always; break-before:page; margin-top:40px}
+    @media print{
+      .no-break{page-break-inside:avoid; break-inside:avoid}
+      .page-break{page-break-before:always; break-before:page}
+      a[href^="http"]::after{content:""}
+      body{margin:12mm}
+    }
+    /* Encadrés corrigés */
+    .corr{background:#f6fffa; border-left:4px solid #4CAF50; padding:14px}
+  </style>
+</head>
+<body>
+  <h1>📘 <u>Évaluation — Développement, Factorisation, Ensembles & Intervalles</u> <span class="tag">Durée : 1h</span></h1>
+
+  <h2>I. Énoncé</h2>
+
+  <div class="exo no-break">
+    <h3>📝 Exercice 1 (10 pts) — Développements et simplifications</h3>
+    <ol>
+      <li>Développer et réduire : \( A(x) = (x+3)(2-5x) \).</li>
+      <li>Développer et réduire : \( B(x) = (3x-1)^2 - 2x \).</li>
+    </ol>
+  </div>
+
+  <div class="exo no-break">
+    <h3>🧩 Exercice 2 (8 pts) — Factorisations et propriété</h3>
+    <ol>
+      <li>Factoriser les expressions suivantes :
+        <div class="math-left">
+        \[
+        \begin{array}{l}
+        C(x) = 2x^2 + 8x \\
+        D(x) = (x+2)(3-x) - (x+2) \\
+        E(x) = 2x - 2 - (x-1)^2
+        \end{array}
+        \]
+        </div>
+      </li>
+      <li> Montrer que la somme de trois entiers naturels <em>pairs successifs</em> est un multiple de 6.</li>
+    </ol>
+  </div>
+
+  <div class="exo no-break">
+    <h3>📏 Exercice 3 (6 pts) — Intervalles</h3>
+    <p>On considère les intervalles : \(A=]1; +\infty[,\, B=]-\infty;4],\, C=]-6;5]\).</p>
+    <ol>
+      <li>Déterminer \( A \cap C \).</li>
+      <li>Déterminer \( B \cup C \).</li>
+      <li>Déterminer \( B \cap A \).</li>
+    </ol>
+  </div>
+
+  <div class="exo no-break">
+    <h3>🔢 Exercice 4 (6 pts) — Nombres et ensembles</h3>
+    <p>Pour chaque nombre, indiquer le <em>plus petit ensemble</em> auquel il appartient parmi \(\mathbb{N},\mathbb{Z},\mathbb{D},\mathbb{Q},\mathbb{R}\).</p>
+    <p class="note">N.B. : \(\mathbb{D}\) désigne l’ensemble des nombres décimaux.</p>
+    <p>Liste : \(-12,\; -2{,}5,\; \tfrac{2}{7},\; -\tfrac{4}{9},\; \pi,\; 1,\; \tfrac{18}{36},\; 9\).</p>
+  </div>
+
+  <div class="page-break"></div>
+
+  <h2>II. Corrigé succinct</h2>
+
+  <div class="corr no-break">
+    <h3>✅ Exercice 1</h3>
+    <ol>
+      <li>\(A(x)=-5x^2 - 13x + 6\)</li>
+      <li>\(B(x)=9x^2 - 8x + 1\)</li>
+    </ol>
+  </div>
+
+  <div class="corr no-break">
+    <h3>✅ Exercice 2</h3>
+    <ol>
+      <li>
+        <div class="math-left">
+        \[
+        \begin{array}{l}
+        C(x)=2x(x+4) \\
+        D(x)=(x+2)\big((3-x)-1\big)=(x+2)(2-x) \\
+        E(x)=2x-2-(x-1)^2=2(x-1)-(x-1)^2=(x-1)\big(3-x\big)
+        \end{array}
+        \]
+        </div>
+      </li>
+      <li>
+        Trois pairs successifs : \(2n,\,2n+2,\,2n+4\). Somme : \(6n+6=6(n+1)\) ⇒ multiple de 6.
+      </li>
+    </ol>
+  </div>
+
+  <div class="corr no-break">
+    <h3>✅ Exercice 3</h3>
+    <ol>
+      <li>\(A\cap C=]1;5]\)</li>
+      <li>\(B\cup C=]-\infty;5]\)</li>
+      <li>\(B\cap A=]1;4]\)</li>
+    </ol>
+  </div>
+
+  <div class="corr no-break">
+    <h3>✅ Exercice 4</h3>
+    <ul>
+      <li>\(-12\in\mathbb{Z}\)</li>
+      <li>\(-2{,}5\in\mathbb{D}\)</li>
+      <li>\(\tfrac{2}{7}\in\mathbb{Q}\)</li>
+      <li>\(-\tfrac{4}{9}\in\mathbb{Q}\)</li>
+      <li>\(\pi\in\mathbb{R}\)</li>
+      <li>\(1\in\mathbb{N}\)</li>
+      <li>\(\tfrac{18}{36}=\tfrac{1}{2}\in\mathbb{D}\)</li>
+      <li>\(9\in\mathbb{N}\)</li>
+    </ul>
+  </div>
+
+</body>
+</html>
