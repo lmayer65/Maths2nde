@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Fiche — Racines carrées (Seconde)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 1cm;
+    line-height: 1.6;
+    max-width: 950px;
+}
+h1, h2, h3, h4 { color: #2c3e50; }
+.definition, .remarque, .propriete, .exemple, .methode {
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    padding: 1em;
+    margin: 1.2em 0;
+}
+.definition { background-color: #fefefe; border-left: 6px solid #3366cc; }
+.remarque   { background-color: #fffaf0; border-left: 6px solid orange; }
+.propriete  { background-color: #eef6ff; border-left: 6px solid #3399ff; }
+.exemple    { background-color: #fff7f0; border-left: 6px solid #ff9900; }
+.methode    { background-color: #f3fff4; border-left: 6px solid #22aa55; }
+
+.math{ font-family: inherit; font-style: normal; }
+.eq { margin: 0.25em 0; }
+.eq .math{ font-family: inherit; font-style: normal; }
+
+/* Pagination propre : éviter les coupures entre blocs */
+.no-break, .definition, .propriete, .exemple, .remarque, .methode {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+@page { margin: 1.5cm; }
+@media print {
+    .page-break { break-after: page; page-break-after: always; }
+}
+
+/* Neutraliser l'italique éventuel pour les énoncés */
+i, em { font-style: normal !important; }
+
+h1 { margin-bottom: 0.4em; }
+h2 { margin-top: 0.2em; margin-bottom: 0.4em; }
+h3 { margin-top: 0.2em; margin-bottom: 0.3em; }
+ul { margin-top: 0.4em; }
+
+/* Espaces verticaux cohérents entre titres et blocs */
+h2 {
+  margin-top: 1.8em;
+  margin-bottom: 0.8em;
+}
+
+h3 {
+  margin-top: 1.4em;
+  margin-bottom: 0.6em;
+}
+
+section > p,
+section > ul,
+section > ol {
+  margin-bottom: 0.8em;
+}
+
+</style>
+<script>
+  window.MathJax = {
+    tex: {inlineMath: [['\\(','\\)'], ['$', '$']],
+      packages: {'[+]': ['ams']}}
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+
+<h1>🟦 Fiche — Racines carrées (Seconde)</h1>
+
+<section class="remarque no-break">
+  <h2>📜 Introduction historique (culture mathématique)</h2>
+  <p>
+    Les pythagoriciens affirmaient : « Tout est nombre », au sens de <strong>nombres rationnels</strong>,
+    c’est-à-dire des nombres qui peuvent s’écrire comme le quotient de deux entiers.
+  </p>
+  <p class="eq">
+    L’étude de la diagonale d’un carré de côté 1 conduit à un nombre impossible à écrire sous forme fractionnaire :
+    <span class="math">\(\sqrt{2}\)</span>.
+  </p>
+  <p>
+    On dit que ce nombre est <strong>irrationnel</strong>.
+  </p>
+  <p><strong>Définition :</strong> Un nombre réel est dit <strong>irrationnel</strong> lorsqu’il ne peut pas s’écrire sous la forme
+    <span class="math">\(p/q\)</span> avec <span class="math">\(p\)</span> entier et <span class="math">\(q\)</span> entier non nul.
+  </p>
+  <p>
+    👉 Le fait que <span class="math">\(\sqrt{2}\)</span> soit irrationnel sera <strong>démontré dans un cours ultérieur</strong>.
+  </p>
+</section>
+
+<section class="definition no-break">
+  <h2>1. Définition de la racine carrée</h2>
+
+  <h3>1.1 Définition</h3>
+  <p>
+    Soit <span class="math">\(a\)</span> un nombre réel <strong>positif</strong>.
+    La <strong>racine carrée</strong> de <span class="math">\(a\)</span> est l’unique nombre réel <strong>positif</strong> dont le carré est égal à <span class="math">\(a\)</span>.
+  </p>
+  <p class="eq"><span class="math">\(\sqrt{a}\)</span> désigne ce nombre.</p>
+  <p class="eq">
+    Cette racine carrée peut aussi s’écrire avec les puissances :
+    <span class="math">\(\sqrt{a} = a\)</span><sup>1/2</sup>.
+  </p>
+
+  <h3>1.2 Lien avec les puissances</h3>
+  <p class="eq">
+    Par les règles sur les puissances :
+    <span class="math">\((a\)</span><sup>1/2</sup><span class="math">\()\)</span><sup>2</sup>
+    = <span class="math">\(a\)</span><sup>(1/2×2)</sup> = <span class="math">\(a\)</span>.
+  </p>
+  <p>Donc <span class="math">\(a\)</span><sup>1/2</sup> est bien le nombre positif dont le carré vaut <span class="math">\(a\)</span>.</p>
+  <p><strong>Exemple :</strong> <span class="math">\(\sqrt{36} = 36\)</span><sup>1/2</sup><span class="math">\(= 6\)</span>.</p>
+</section>
+
+<section class="propriete no-break">
+  <h2>2. Opérations avec les racines carrées</h2>
+  <p>Dans toute cette partie, on suppose <span class="math">\(a &gt; 0\)</span> et <span class="math">\(b &gt; 0\)</span>.</p>
+
+  <h3>2.1 Propriétés valides</h3>
+  <ul>
+    <li><span class="math">\(\sqrt{a} × \sqrt{b} = \sqrt{ab}\)</span></li>
+    <li><span class="math">\(\sqrt{a} / \sqrt{b} = \sqrt{\frac{a}{b}}\)</span></li>
+    <li><span class="math">\(((\sqrt{a})^2 = a)\)</span></li>
+    <li><span class="math">\(\sqrt{a^2} = a\)</span></li>
+  </ul>
+
+  <h3>2.2 Égalités jamais vraies (cas <span class="math">\(a≠0\)</span> et <span class="math">\(b≠0\)</span>) ⚠️</h3>
+  <p>Si <span class="math">\(a &gt; 0\)</span> et <span class="math">\(b &gt; 0\)</span>, alors :</p>
+  <ul>
+    <li><span class="math">\(\sqrt{a} + \sqrt{b} ≠ \sqrt{a+b}\)</span></li>
+    <li><span class="math">\(\sqrt{a} − \sqrt{b} ≠ \sqrt{a−b}\)</span> (avec <span class="math">\(a &gt; b\)</span>)</li>
+  </ul>
+</section>
+
+<section class="exemple no-break">
+  <h2>2.3 Démonstration : <span class="math">\(\sqrt{a} + \sqrt{b} ≠ \sqrt{a+b}\)</span></h2>
+  <p>On raisonne par l’absurde : on suppose <span class="math">\(\sqrt{a} + \sqrt{b} = \sqrt{a+b}\)</span>.</p>
+  <p>On élève au carré :</p>
+  <p class="eq">
+    <span class="math">\((\sqrt{a} + \sqrt{b})\)</span><sup>2</sup>
+    = <span class="math">\(a + b + 2\sqrt{ab}\)</span>.
+  </p>
+  <p class="eq">
+    <span class="math">\((\sqrt{a+b})\)</span><sup>2</sup> = <span class="math">\(a+b\)</span>.
+  </p>
+  <p>Donc <span class="math">\(a+b+2\sqrt{ab}=a+b\)</span>, d’où <span class="math">\(\sqrt{ab}=0\)</span>, impossible car <span class="math">\(a&gt;0\)</span> et <span class="math">\(b&gt;0\)</span>.</p>
+</section>
+
+<section class="exemple no-break">
+  <h2>2.4 Démonstration : <span class="math">\(\sqrt{a} − \sqrt{b} ≠ \sqrt{a−b}\)</span> (avec <span class="math">\(a&gt;b\)</span>)</h2>
+  <p>On suppose <span class="math">\(\sqrt{a} − \sqrt{b} = \sqrt{a−b}\)</span>.</p>
+  <p>On élève au carré :</p>
+  <p class="eq">
+    <span class="math">\((\sqrt{a} − \sqrt{b})\)</span><sup>2</sup>
+    = <span class="math">\(a + b − 2\sqrt{ab}\)</span>.
+  </p>
+  <p class="eq">
+    <span class="math">\((\sqrt{a−b})\)</span><sup>2</sup> = <span class="math">\(a−b\)</span>.
+  </p>
+  <p>Donc <span class="math">\(a+b−2\sqrt{ab}=a−b\)</span>, d’où <span class="math">\(b=\sqrt{ab}\)</span>.</p>
+  <p>En élevant au carré : <span class="math">\(b\)</span><sup>2</sup><span class="math">\(=ab\)</span>, donc <span class="math">\(b(a−b)=0\)</span>, impossible puisque <span class="math">\(a&gt;b&gt;0\)</span>.</p>
+</section>
+
+<section class="propriete no-break">
+  <h2>3. Calculs avec des racines carrées</h2>
+
+  <h3>3.1 Produits et quotients</h3>
+  <p class="eq"><span class="math">\(\sqrt{32} × \sqrt{2} = \sqrt{64} = 8\)</span></p>
+  <p class="eq"><span class="math">\(\sqrt{98} / \sqrt{2} = \sqrt{49} = 7\)</span></p>
+
+  <h3>3.2 Extraction d’un carré parfait</h3>
+  <p>On écrit le nombre sous la racine comme un produit contenant un carré parfait.</p>
+  <p class="eq"><span class="math">\(\sqrt{72} = \sqrt{36×2} = 6\sqrt{2}\)</span></p>
+  <p class="eq"><span class="math">\(\sqrt{45} = \sqrt{9×5} = 3\sqrt{5}\)</span></p>
+</section>
+
+<section class="propriete no-break">
+  <h2>4. Simplifier des expressions avec des racines carrées</h2>
+
+  <h3>4.1 Regrouper les termes semblables</h3>
+  <p class="eq"><span class="math">\(4\sqrt{3} − 2\sqrt{3} + 6\sqrt{3} = 8\sqrt{3}\)</span></p>
+
+  <h3>4.2 Racines « déguisées »</h3>
+  <p class="eq"><span class="math">\(\sqrt{12} + 7\sqrt{3} − \sqrt{27}\)</span></p>
+  <p class="eq"><span class="math">\(= 2\sqrt{3} + 7\sqrt{3} − 3\sqrt{3} = 6\sqrt{3}\)</span></p>
+</section>
+
+<section class="exemple no-break">
+  <h2>5. Développements avec des racines carrées — Exemples</h2>
+  <p>Les racines carrées sont traitées comme des inconnues.</p>
+
+  <p class="eq"><span class="math">\((\sqrt{3} + 4)\)</span><sup>2</sup><span class="math">\(= 3 + 8\sqrt{3} + 16 = 19 + 8\sqrt{3}\)</span></p>
+  <p class="eq"><span class="math">\((\sqrt{5} − 2)\)</span><sup>2</sup><span class="math">\(= 5 − 4\sqrt{5} + 4 = 9 − 4\sqrt{5}\)</span></p>
+  <p class="eq"><span class="math">\((\sqrt{2} − \sqrt{7})(\sqrt{2} + \sqrt{7}) = 2 − 7 = −5\)</span></p>
+  <p class="eq"><span class="math">\((3 + \sqrt{3})(1 − \sqrt{2}) = 3 − 3\sqrt{2} + \sqrt{3} − \sqrt{6}\)</span></p>
+</section>
+
+<section class="methode no-break">
+  <h2>6. Simplification d’un dénominateur avec une racine carrée</h2>
+  <p>Dans certaines expressions, une racine carrée apparaît au dénominateur. On cherche alors à supprimer la racine du dénominateur.</p>
+
+  <h3>6.1 Principe général</h3>
+  <p class="eq"><span class="math">\((a + \sqrt{b})(a − \sqrt{b}) = a\)</span><sup>2</sup><span class="math">\(− b\)</span></p>
+  <p>On multiplie le numérateur et le dénominateur par la <strong>quantité conjuguée</strong> du dénominateur.</p>
+
+  <h3>6.2 Exemple fondamental</h3>
+  <p class="eq"><span class="math">\[\frac{1}{\sqrt{5}+2} = \frac{1}{\sqrt{5}+2}\times\frac{\sqrt{5}-2}{\sqrt{5}-2}\]</span></p>
+<p class="eq"><span class="math">\[\frac{1}{\sqrt{5}+2} = \frac{\sqrt{5}-2}{(\sqrt{5}+2)(\sqrt{5}-2)}\]</span></p>
+<p class="eq"><span class="math">\[\frac{1}{\sqrt{5}+2} = \frac{\sqrt{5}-2}{5-4}\]</span></p>
+<p class="eq"><span class="math">\[\frac{1}{\sqrt{5}+2} = \sqrt{5}-2\]</span></p>
+
+<h3>6.3 Exemple avec un coefficient</h3>
+  <p class="eq"><span class="math">\[\frac{3}{2-\sqrt{7}} = \frac{3}{2-\sqrt{7}}\times\frac{2+\sqrt{7}}{2+\sqrt{7}}\]</span></p>
+<p class="eq"><span class="math">\[\frac{3}{2-\sqrt{7}} = \frac{3(2+\sqrt{7})}{(2-\sqrt{7})(2+\sqrt{7})}\]</span></p>
+<p class="eq"><span class="math">\[\frac{3}{2-\sqrt{7}} = \frac{6+3\sqrt{7}}{4-7}\]</span></p>
+<p class="eq"><span class="math">\[\frac{3}{2-\sqrt{7}} = \frac{6+3\sqrt{7}}{-3}\]</span></p>
+<p class="eq"><span class="math">\[\frac{3}{2-\sqrt{7}} = -2-\sqrt{7}\]</span></p>
+
+<p> Le principe est donc de systématiquement de <b>supprimer les racines carrées du dénominateur</b>. </p>
+<h3>6.4 Exemple avec une racine au numérateur</h3>
+  <p class="eq"><span class="math">\[\frac{\sqrt{3}}{\sqrt{3}-1} = \frac{\sqrt{3}}{\sqrt{3}-1}\times\frac{\sqrt{3}+1}{\sqrt{3}+1}\]</span></p>
+<p class="eq"><span class="math">\[\frac{\sqrt{3}}{\sqrt{3}-1} = \frac{\sqrt{3}(\sqrt{3}+1)}{(\sqrt{3}-1)(\sqrt{3}+1)}\]</span></p>
+<p class="eq"><span class="math">\[\frac{\sqrt{3}}{\sqrt{3}-1} = \frac{3+\sqrt{3}}{3-1}\]</span></p>
+<p class="eq"><span class="math">\[\frac{\sqrt{3}}{\sqrt{3}-1} = \frac{3+\sqrt{3}}{2}\]</span></p><h3>6.5 Méthode à retenir</h3>
+  <ol>
+    <li>Identifier la quantité conjuguée du dénominateur</li>
+    <li>Multiplier numérateur et dénominateur par cette quantité</li>
+    <li>Simplifier grâce à <span class="math">\(a\)</span><sup>2</sup><span class="math">\(− b\)</span></li>
+  </ol>
+</section>
+
+</body>
+</html>

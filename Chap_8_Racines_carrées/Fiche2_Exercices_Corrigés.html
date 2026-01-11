@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Fiche d'exercices + corrigé détaillé — Racines carrées (Seconde)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 1cm;
+  line-height: 1.5;
+  max-width: 980px;
+}
+h1 { color:#123a63; margin-bottom:0.35em; }
+h2 { color:#1f4e79; margin-top:1.2em; margin-bottom:0.4em; }
+h3 { color:#1f6b3a; margin-top:0.9em; margin-bottom:0.3em; }
+
+.exo {
+  border:1px solid #bbb;
+  border-left: 8px solid #2b7de9;
+  border-radius: 10px;
+  padding: 0.9em 1em;
+  margin: 1em 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.enonce {
+  background:#eef6ff;
+  border:1px solid #cfe6ff;
+  border-radius:10px;
+  padding:0.6em 0.8em;
+}
+.enonce strong { color:#0f4ea3; }
+
+.corrige {
+  border:1px solid #bfe8c8;
+  border-left:8px solid #22aa55;
+  background:#f0fff4;
+  border-radius:10px;
+  padding:0.85em 1em;
+  margin:0.9em 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.math { font-style: normal; }
+.eq { margin:0.35em 0; }
+.small { font-size:0.95em; color:#222; }
+
+.page-break {
+  break-before: page;
+  page-break-before: always;
+}
+@page { margin: 1.5cm; }
+
+figure img { max-width:420px; height:auto; display:block; }
+ul { margin:0.35em 0 0.35em 1.1em; }
+ol { margin:0.35em 0 0.35em 1.2em; }
+</style>
+
+<script>
+window.MathJax={
+  tex:{
+  inlineMath: [['\\(','\\)'], ['$', '$']],
+  packages:{'[+]':['ams']}}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+
+<h1>📘 Fiche d'exercices — Racines carrées </h1>
+
+<!-- ================= ENONCÉS ================= -->
+
+<div class="exo">
+  <h2>🧩 Exercice 1 — Écriture sans radical</h2>
+  <div class="enonce">
+    <p>En détaillant, donner une écriture <strong>sans radical</strong> (√) :</p>
+    <p class="eq">\(A=-(\sqrt{19})^2\)</p>
+    <p class="eq">\(B=\sqrt{32}\times\sqrt{2}\)</p>
+    <p class="eq">\(C=\dfrac{\sqrt{121}}{\sqrt{144}}\)</p>
+    <p class="eq">\(D=\sqrt{36+64}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>🧠 Exercice 2 — Extraire un carré parfait</h2>
+  <div class="enonce">
+    <p>Modèle :</p>
+    <p class="eq">\(\sqrt{12}=\sqrt{4\times3}=\sqrt4\,\sqrt3=2\sqrt3\)</p>
+    <p><strong>Simplifier les écritures suivantes :</strong></p>
+    <ul>
+      <li>\(\sqrt{20}\)</li><li>\(\sqrt{27}\)</li><li>\(\sqrt{32}\)</li><li>\(\sqrt{50}\)</li><li>\(\sqrt{40}\)</li>
+      <li>\(\sqrt{200}\)</li><li>\(\sqrt{75}\)</li><li>\(\sqrt{72}\)</li><li>\(\sqrt{490}\)</li><li>\(\sqrt{242}\)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>📝 Exercice 3 — Simplifications</h2>
+  <div class="enonce">
+    <p>Écrire sous la forme \(a+b\sqrt{c}\) :</p>
+    <p class="eq">\(E_1=\sqrt8-2\sqrt{18}+\sqrt{32}\)</p>
+    <p class="eq">\(E_2=\sqrt{40}-2\sqrt{90}+3\sqrt{160}\)</p>
+    <p class="eq">\(E_3=\sqrt{75}-2\sqrt{27}+2\sqrt{48}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>⚠️ Exercice 4 — Simplifications</h2>
+  <div class="enonce">
+    <p class="eq">\(H_1=\sqrt{81}-49\)</p>
+    <p class="eq">\(H_2=\sqrt{300}+4\sqrt5\sqrt{15}\)</p>
+    <p class="eq">\(H_3=\dfrac{\sqrt{80}}{3\sqrt{45}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>🧮 Exercice 5 — Développements</h2>
+  <div class="enonce">
+    <p class="eq">\(J_1=\sqrt{15}(3-\sqrt{15})-(\sqrt{15}+5)\)</p>
+    <p class="eq">\(J_2=(\sqrt3-2\sqrt5)^2\)</p>
+    <p class="eq">\(J_3=(3\sqrt2-5)(3\sqrt2+5)\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>📐 Exercice 6 — Théorème de Pythagore</h2>
+  <div class="enonce">
+    <p>On considère le triangle \(KLM\) avec :</p>
+    <p class="eq">\(KL=2\sqrt{11}\,\text{cm},\quad LM=\sqrt{154}\,\text{cm},\quad KM=3\sqrt{22}\,\text{cm}\)</p>
+    <ol>
+      <li>Démontrer que le triangle est rectangle.</li>
+      <li>Calculer son aire et donner le résultat sous la forme \(a\sqrt{14}\,\text{cm}^2\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>📏 Exercice 7 — Théorème de Thalès</h2>
+  <div class="enonce">
+    <p>\(AB=6\), \(BC=3\), \(AE=\sqrt{45}\) (en cm).</p>
+    <p>Les droites \((BD)\) et \((CE)\) sont parallèles, (BC) et (DE) sont sécantes en A. Calculer \(AD\) et donner le résultat sous la forme \(a\sqrt5\).</p>
+    <figure><img src="data:image/png;base64,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" alt="Figure Thalès"></figure>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>🔢 Exercice 8 — Calculs de valeurs</h2>
+  <div class="enonce">
+    <p><strong>1)</strong> \(A(x)=3x^2-2x+1\). Calculer pour : \(\sqrt2\), \(3\sqrt2\), \(-\sqrt2\), \(\frac{\sqrt2}{3}\), \(-\frac{\sqrt2}{3}\).</p>
+    <p><strong>2)</strong> \(B(x)=(3x-1)^2-(x+2)^2\).
+      <br>a) Calculer \(B(\sqrt5)\) sous la forme \(a+b\sqrt5\).
+      <br>b) Factoriser \(B(x)\) puis refaire le calcul.
+    </p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>🧷 Exercice 9 — Quantité conjuguée</h2>
+  <div class="enonce">
+    <p>En supprimant les racines carrées au dénominateur, montrer les égalités :</p>
+    <p class="eq">\(A=\dfrac{1}{1+\sqrt2}=-1+\sqrt2\)</p>
+    <p class="eq">\(B=\dfrac{1}{\sqrt5}=\dfrac{\sqrt5}{5}\)</p>
+    <p class="eq">\(C=\dfrac{1}{\sqrt6-2}=\dfrac{\sqrt6}{2}+1\)</p>
+    <p class="eq">\(D=\dfrac{3}{\sqrt2+\sqrt5}=-\sqrt2+\sqrt5\)</p>
+    <p class="eq">\(E=\dfrac{-3}{\sqrt5-\sqrt7}=\dfrac{3}{2}(\sqrt5+\sqrt7)\)</p>
+    <p class="eq">\(F=\dfrac{97}{10+\sqrt3}=10-\sqrt3\)</p>
+    <p class="eq">\(G=\sqrt{\dfrac12}=\dfrac{\sqrt2}{2}\)</p>
+    <p class="eq">\(H=\dfrac{-1-\sqrt2}{1-\sqrt2}=3+2\sqrt2\)</p>
+  </div>
+</div>
+
+<!-- ================= CORRIGÉ DÉTAILLÉ (à la fin) ================= -->
+<div class="page-break"></div>
+
+<h1>✅ Corrigé détaillé</h1>
+
+<div class="corrige">
+  <h2>🧩 Exercice 1</h2>
+  <p class="eq"><strong>A.</strong> \(A=-(\sqrt{19})^2=-19\)</p>
+  <p class="eq"><strong>B.</strong> \(B=\sqrt{32}\,\sqrt2=\sqrt{32\times2}=\sqrt{64}=8\)</p>
+  <p class="eq"><strong>C.</strong> \(C=\dfrac{\sqrt{121}}{\sqrt{144}}=\dfrac{11}{12}\)</p>
+  <p class="eq"><strong>D.</strong> \(D=\sqrt{36+64}=\sqrt{100}=10\)</p>
+</div>
+
+<div class="corrige">
+  <h2>🧠 Exercice 2</h2>
+  <p class="small">On cherche un carré parfait dans le nombre sous la racine puis on utilise \(\sqrt{uv}=\sqrt u\,\sqrt v\).</p>
+
+  <p class="eq"><strong>1)</strong> \(\sqrt{20}=\sqrt{4\times5}=\sqrt4\,\sqrt5=2\sqrt5\)</p>
+  <p class="eq"><strong>2)</strong> \(\sqrt{27}=\sqrt{9\times3}=\sqrt9\,\sqrt3=3\sqrt3\)</p>
+  <p class="eq"><strong>3)</strong> \(\sqrt{32}=\sqrt{16\times2}=\sqrt{16}\,\sqrt2=4\sqrt2\)</p>
+  <p class="eq"><strong>4)</strong> \(\sqrt{50}=\sqrt{25\times2}=\sqrt{25}\,\sqrt2=5\sqrt2\)</p>
+  <p class="eq"><strong>5)</strong> \(\sqrt{40}=\sqrt{4\times10}=\sqrt4\,\sqrt{10}=2\sqrt{10}\)</p>
+
+  <p class="eq"><strong>6)</strong> \(\sqrt{200}=\sqrt{100\times2}=\sqrt{100}\,\sqrt2=10\sqrt2\)</p>
+  <p class="eq"><strong>7)</strong> \(\sqrt{75}=\sqrt{25\times3}=\sqrt{25}\,\sqrt3=5\sqrt3\)</p>
+  <p class="eq"><strong>8)</strong> \(\sqrt{72}=\sqrt{36\times2}=\sqrt{36}\,\sqrt2=6\sqrt2\)</p>
+  <p class="eq"><strong>9)</strong> \(\sqrt{490}=\sqrt{49\times10}=\sqrt{49}\,\sqrt{10}=7\sqrt{10}\)</p>
+  <p class="eq"><strong>10)</strong> \(\sqrt{242}=\sqrt{121\times2}=\sqrt{121}\,\sqrt2=11\sqrt2\)</p>
+</div>
+
+<div class="corrige">
+  <h2>📝 Exercice 3</h2>
+
+  <h3>\(E_1\)</h3>
+  <p class="eq">\(\sqrt8=2\sqrt2\), \(\sqrt{18}=3\sqrt2\), \(\sqrt{32}=4\sqrt2\)</p>
+  <p class="eq">\(E_1=2\sqrt2-2\times3\sqrt2+4\sqrt2=(2-6+4)\sqrt2=0\)</p>
+
+  <h3>\(E_2\)</h3>
+  <p class="eq">\(\sqrt{40}=2\sqrt{10}\), \(\sqrt{90}=3\sqrt{10}\), \(\sqrt{160}=4\sqrt{10}\)</p>
+  <p class="eq">\(E_2=2\sqrt{10}-2\times3\sqrt{10}+3\times4\sqrt{10}=(2-6+12)\sqrt{10}=8\sqrt{10}\)</p>
+
+  <h3>\(E_3\)</h3>
+  <p class="eq">\(\sqrt{75}=5\sqrt3\), \(\sqrt{27}=3\sqrt3\), \(\sqrt{48}=4\sqrt3\)</p>
+  <p class="eq">\(E_3=5\sqrt3-2\times3\sqrt3+2\times4\sqrt3=(5-6+8)\sqrt3=7\sqrt3\)</p>
+</div>
+
+<div class="corrige">
+  <h2>⚠️ Exercice 4</h2>
+
+  <h3>\(H_1\)</h3>
+  <p class="eq">\(H_1=\sqrt{81}-49=9-49=-40\)</p>
+
+  <h3>\(H_2\)</h3>
+  <p class="eq">\(\sqrt{300}=\sqrt{100\times3}=10\sqrt3\)</p>
+  <p class="eq">\(4\sqrt5\,\sqrt{15}=4\sqrt{75}=4\sqrt{25\times3}=20\sqrt3\)</p>
+  <p class="eq">\(H_2=10\sqrt3+20\sqrt3=30\sqrt3\)</p>
+
+  <h3>\(H_3\)</h3>
+  <p class="eq">\(\sqrt{80}=4\sqrt5\) et \(\sqrt{45}=3\sqrt5\)</p>
+  <p class="eq">\(H_3=\dfrac{4\sqrt5}{3\times3\sqrt5}=\dfrac{4\sqrt5}{9\sqrt5}=\dfrac49\)</p>
+</div>
+
+<div class="corrige">
+  <h2>🧮 Exercice 5</h2>
+
+  <h3>\(J_1\)</h3>
+  <p class="eq">\(J_1=\sqrt{15}(3-\sqrt{15})-(\sqrt{15}+5)\)</p>
+  <p class="eq">\(=3\sqrt{15}-(\sqrt{15})^2-\sqrt{15}-5=2\sqrt{15}-20\)</p>
+  
+  <h3>\(J_2\)</h3>
+  <p class="eq">\((\sqrt3-2\sqrt5)^2=3-4\sqrt{15}+20=23-4\sqrt{15}\)</p>
+
+  <h3>\(J_3\)</h3>
+  <p class="eq">\((3\sqrt2-5)(3\sqrt2+5)=(3\sqrt2)^2-5^2=18-25=-7\)</p>
+
+</div>
+
+<div class="corrige">
+  <h2>📐 Exercice 6</h2>
+  <h3>1) Triangle rectangle ?</h3>
+  <p class="eq">\(KL^2=(2\sqrt{11})^2=44\)</p>
+  <p class="eq">\(LM^2=(\sqrt{154})^2=154\)</p>
+  <p class="eq">\(KM^2=(3\sqrt{22})^2=198\)</p>
+  <p class="eq">\(KL^2+LM^2=44+154=198=KM^2\) donc d'après la réciproque du théorème de Pythagore, le triangle KLM est rectangle en \(L\).</p>
+
+  <h3>2) Calcul de l'aire</h3>
+  <p class="eq">\(\mathcal A=\dfrac{KL\times LM}{2}=\dfrac{2\sqrt{11}\,\sqrt{154}}{2}=\sqrt{1694}\)</p>
+  <p class="eq">\(1694=121\times14\Rightarrow \mathcal A=\sqrt{121\times14}=11\sqrt{14}\,\text{cm}^2\)</p>
+</div>
+
+<div class="corrige">
+  <h2>📏 Exercice 7</h2>
+  <p class="eq">\(AC=AB+BC=6+3=9\)</p>
+  <p class="eq">On sait que (BD) // (CE) et que les points A,B,C -respectivement A,D,E sont alignés, d'après le théorème de Thalès : \(\dfrac{AD}{AE}=\dfrac{AB}{AC}\Rightarrow AD=AE\times\dfrac{AB}{AC}\)</p>
+  <p class="eq">\(AD=\sqrt{45}\times\dfrac{6}{9}=\sqrt{45}\times\dfrac{2}{3}\)</p>
+  <p class="eq">\(\sqrt{45}=3\sqrt5\Rightarrow AD=3\sqrt5\times\dfrac{2}{3}=2\sqrt5\,\text{cm}\)</p>
+</div>
+
+<div class="corrige">
+  <h2>🔢 Exercice 8</h2>
+
+  <h3>1) Valeurs de \(A(x)\)</h3>
+  <p class="eq">\(A(\sqrt2)=3\times2-2\sqrt2+1=7-2\sqrt2\) </p>
+  <p class="eq">\(A(3\sqrt2)=3\times18-6\sqrt2+1=55-6\sqrt2\)</p>
+  <p class="eq">\(A(-\sqrt2)=7+2\sqrt2\) ≈ 9.828</p>
+  <p class="eq">\(A\left(\frac{\sqrt2}{3}\right)=\frac{5}{3}-\frac{2\sqrt2}{3}\) </p>
+  <p class="eq">\(A\left(-\frac{\sqrt2}{3}\right)=\frac{5}{3}+\frac{2\sqrt2}{3}\) </p>
+
+  <h3>2) Calcul de \(B(\sqrt5)\)</h3>
+  <p class="eq">\(B(x)=(3x-1)^2-(x+2)^2\)</p>
+  <p class="eq">\(=(3x-1-(x+2))(3x-1+(x+2))\) <span class="small">(différence de deux carrés)</span></p>
+  <p class="eq">\(=(2x-3)(4x+1)\)</p>
+  <p class="eq">\(B(\sqrt5)=(2\sqrt5-3)(4\sqrt5+1)=37-10\sqrt5\)</p>
+</div>
+
+<div class="corrige">
+  <h2>🧷 Exercice 9</h2>
+  <p class="small">Principe : multiplier numérateur et dénominateur par la quantité conjuguée du dénominateur.</p>
+
+  <h3>A</h3>
+  <p class="eq">\(\dfrac{1}{1+\sqrt2}\times\dfrac{1-\sqrt2}{1-\sqrt2}=\dfrac{1-\sqrt2}{1-2}=-1+\sqrt2\)</p>
+
+  <h3>B</h3>
+  <p class="eq">\(\dfrac{1}{\sqrt5}\times\dfrac{\sqrt5}{\sqrt5}=\dfrac{\sqrt5}{5}\)</p>
+
+  <h3>C</h3>
+  <p class="eq">\(\dfrac{1}{\sqrt6-2}\times\dfrac{\sqrt6+2}{\sqrt6+2}=\dfrac{\sqrt6+2}{6-4}=\dfrac{\sqrt6}{2}+1\)</p>
+
+  <h3>D</h3>
+  <p class="eq">\(\dfrac{3}{\sqrt2+\sqrt5}\times\dfrac{\sqrt5-\sqrt2}{\sqrt5-\sqrt2}=\dfrac{3(\sqrt5-\sqrt2)}{5-2}=\sqrt5-\sqrt2\)</p>
+
+  <h3>E</h3>
+  <p class="eq">\(\dfrac{-3}{\sqrt5-\sqrt7}\times\dfrac{\sqrt5+\sqrt7}{\sqrt5+\sqrt7}=\dfrac{-3(\sqrt5+\sqrt7)}{5-7}=\dfrac{3}{2}(\sqrt5+\sqrt7)\)</p>
+
+  <h3>F</h3>
+  <p class="eq">\(\dfrac{97}{10+\sqrt3}\times\dfrac{10-\sqrt3}{10-\sqrt3}=\dfrac{97(10-\sqrt3)}{100-3}=10-\sqrt3\)</p>
+
+  <h3>G</h3>
+  <p class="eq">\(\sqrt{\dfrac12}=\dfrac{1}{\sqrt2}=\dfrac{\sqrt2}{2}\)</p>
+
+  <h3>H</h3>
+  <p class="eq">\(\dfrac{-1-\sqrt2}{1-\sqrt2}\times\dfrac{1+\sqrt2}{1+\sqrt2}=\dfrac{(-1-\sqrt2)(1+\sqrt2)}{1-2}\)</p>
+  <p class="eq">\((-1-\sqrt2)(1+\sqrt2)=-1-2\sqrt2-2=-3-2\sqrt2\)</p>
+  <p class="eq">\(\Rightarrow \dfrac{-3-2\sqrt2}{-1}=3+2\sqrt2\)</p>
+</div>
+
+</body>
+</html>
