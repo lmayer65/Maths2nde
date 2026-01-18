@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Révisions de géométrie — Travail de groupes (Seconde)</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --ink:#1f2937;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --accent2:#16a34a;
+      --warn:#b45309;
+      --card:#f8fafc;
+      --border:#e5e7eb;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.35;
+    }
+    .page{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 40px;
+    }
+    header{
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, #eff6ff 0%, #ffffff 70%);
+      border-radius: 14px;
+    }
+    h1{
+      margin:0 0 6px 0;
+      font-size: 1.55rem;
+      letter-spacing: .2px;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size: .98rem;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .card{
+      grid-column: span 12;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--card);
+      padding: 14px 14px 12px;
+      box-shadow: 0 1px 0 rgba(0,0,0,.03);
+    }
+
+    .card h2{
+      margin: 0 0 8px 0;
+      font-size: 1.12rem;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      color:#fff;
+      background: var(--accent);
+      font-size:.95rem;
+      flex: 0 0 auto;
+    }
+
+    ul{ margin: 8px 0 0 18px; }
+    li{ margin: 5px 0; }
+
+    .tagrow{ margin-top:10px; display:flex; flex-wrap:wrap; gap:8px; }
+    .tag{
+      font-size:.86rem;
+      border:1px solid var(--border);
+      background:#fff;
+      padding:4px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+    }
+    .tag.ok{ border-color:#bfdbfe; color:#1d4ed8; }
+    .tag.no{ border-color:#fed7aa; color: var(--warn); }
+    .tag.goal{ border-color:#bbf7d0; color: var(--accent2); }
+
+    .footer{
+      margin-top: 14px;
+      padding: 12px 14px;
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      color: var(--muted);
+      background:#fff;
+    }
+
+    .kpi{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .pill{
+      border:1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background:#fff;
+      font-size:.92rem;
+      color: var(--ink);
+    }
+
+    /* Pagination (impression PDF) */
+    .page-break{ page-break-before: always; break-before: page; }
+    @media print{
+      body{ background:#fff; }
+      .page{ max-width:none; padding: 0.8cm 1.0cm 1.1cm; }
+      header, .card, .footer{ box-shadow:none; }
+      .card{ break-inside: avoid; page-break-inside: avoid; }
+      header{ break-inside: avoid; page-break-inside: avoid; }
+      ul{ margin-left: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>🧩 Révisions de géométrie — Travail de groupes (Seconde)</h1>
+      <p class="sub">Consigne : produire une fiche claire, structurée et rigoureuse (niveau collège, rédaction attendue en Seconde).</p>
+      <div class="kpi">
+        <span class="pill">📌 Notations propres</span>
+        <span class="pill">🧠 Conditions d’application explicites</span>
+        <span class="pill">✍️ Exemples rédigés + conclusion</span>
+        <span class="pill">📐 Schémas annotés</span>
+      </div>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <h2><span class="badge">1</span> Groupe 1 — Théorème de Thalès</h2>
+        <ul>
+          <li>Énoncé du théorème.</li>
+          <li>Conditions d’application : alignements + parallélisme.</li>
+          <li>Réciproque du théorème de Thalès.</li>
+        </ul>
+        <div class="tagrow">
+          <span class="tag goal">Objectif : calcul / parallélisme</span>
+          <span class="tag ok">✔️ Thalès : parallélisme connu → calcul</span>
+          <span class="tag ok">✔️ Réciproque : rapports égaux → parallélisme</span>
+          <span class="tag no">❌ Réciproque : rapports non égaux → on ne peut pas conclure</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2><span class="badge">2</span> Groupe 2 — Théorème de Pythagore</h2>
+        <ul>
+          <li>Énoncé du théorème.</li>
+          <li>Conditions d’utilisation : triangle rectangle + identification de l’hypoténuse.</li>
+          <li>Réciproque du théorème de Pythagore (démontrer qu’un triangle est rectangle).</li>
+        </ul>
+        <div class="tagrow">
+          <span class="tag goal">Objectif : longueurs / nature du triangle</span>
+          <span class="tag ok">✔️ Pythagore : triangle rectangle → calcul</span>
+          <span class="tag ok">✔️ Réciproque : égalité vérifiée → triangle rectangle</span>
+          <span class="tag no">❌ Réciproque : égalité non vérifiée → on ne peut pas conclure</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2><span class="badge">3</span> Groupe 3 — Trigonométrie dans le triangle rectangle</h2>
+        <ul>
+          <li>Définitions : \(\sin\), \(\cos\), \(\tan\) (opposé / adjacent / hypoténuse).</li>
+          <li>Conditions d’utilisation : triangle rectangle + angle choisi.</li>
+          <li>Choix justifié de la relation adaptée (longueur ou angle recherché).</li>
+          <li>Exemples : un calcul de longueur + un calcul d’angle (ou justification du choix).</li>
+        </ul>
+        <div class="tagrow">
+          <span class="tag goal">Objectif : longueur ↔ angle</span>
+          <span class="tag ok">✔️ Choisir la bonne relation</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2><span class="badge">4</span> Groupe 4 — Triangles et propriétés</h2>
+        <ul>
+          <li>Triangle quelconque : définition + propriétés utiles.</li>
+          <li>Triangle rectangle : définition + propriétés.</li>
+          <li>Triangle isocèle : définition + propriétés (angles à la base, axe de symétrie).</li>
+          <li>Triangle équilatéral : définition + propriétés (angles de 60°, symétries).</li>
+          <li>Pour chaque type : un schéma annoté + un mini-exemple.</li>
+        </ul>
+        <div class="tagrow">
+          <span class="tag goal">Objectif : reconnaître / justifier</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2><span class="badge">5</span> Groupe 5 — Parallélogrammes</h2>
+        <ul>
+          <li>Parallélogramme : définition + propriétés générales (côtés opposés, diagonales, angles).</li>
+          <li>Parallélogrammes particuliers : rectangle, losange, carré (définitions + propriétés spécifiques).</li>
+          <li><strong>À ajouter</strong> : comment démontrer qu’un parallélogramme est particulier à partir d’une propriété supplémentaire.</li>
+        </ul>
+        <div class="tagrow">
+          <span class="tag ok">✔️ Rectangle : un angle droit (ou diagonales égales)</span>
+          <span class="tag ok">✔️ Losange : deux côtés consécutifs égaux (ou diagonales perpendiculaires)</span>
+          <span class="tag ok">✔️ Carré : rectangle + losange</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2><span class="badge">6</span> Groupe 6 — Droites remarquables dans un triangle</h2>
+        <ul>
+          <li>Médiatrices : définition + point de concours.</li>
+          <li>Médianes : définition + point de concours.</li>
+          <li>Hauteurs : définition + point de concours.</li>
+          <li>Bissectrices : définition + point de concours.</li>
+          <li>Pour chaque droite : un schéma annoté + une propriété essentielle.</li>
+        </ul>
+        <div class="tagrow">
+          <span class="tag goal">Objectif : construire / identifier</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="footer">
+      <strong>🎯 Objectif commun</strong> : réactiver les notions de collège avec la rigueur de Seconde, en vue d’un <strong>QCM final individuel</strong>.
+      <br />
+      Astuce : dans chaque exemple, terminer par une phrase de conclusion du type « Donc … ».
+    </section>
+
+    <!-- MathJax (affichage des formules) -->
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [['\\(','\\)'], ['$', '$']] },
+        options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  </main>
+</body>
+</html>
