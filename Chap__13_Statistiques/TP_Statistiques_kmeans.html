@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TP Python — Statistiques et K-means (k=2)</title>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.58;
+  margin: 0;
+  background: #f6f7fb;
+  color: #1f2937;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 30px 22px 60px;
+}
+h1, h2, h3 { color: #143d79; }
+h1 {
+  margin-top: 0;
+  border-bottom: 4px solid #143d79;
+  padding-bottom: 10px;
+}
+.section {
+  background: white;
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.objectif {
+  background: #edf6ff;
+  border-left: 5px solid #2563eb;
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+.note {
+  background: #fff8e8;
+  border-left: 5px solid #d18b00;
+  padding: 12px 14px;
+  margin: 14px 0;
+}
+code, pre {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.95rem;
+}
+pre {
+  background: #0f172a;
+  color: #e5eefc;
+  padding: 16px;
+  overflow-x: auto;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+ol li, ul li { margin: 6px 0; }
+.pagebreak {
+  break-before: page;
+  page-break-before: always;
+}
+@media print {
+  body { background: white; }
+  .section {
+    box-shadow: none;
+    border: 1px solid #d5dbe5;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>TP Python — Statistiques et K-means sur trois évaluations</h1>
+
+  <div class="objectif">
+    <strong>Objectifs.</strong> Dans ce TP, on exploite en Python les résultats de trois évaluations.
+    On nettoie les données, on calcule des indicateurs statistiques, on compare les séries avec des boîtes à moustaches,
+    puis on applique un vrai algorithme <strong>K-means</strong> avec <code>scikit-learn</code> en prenant <strong>k = 2</strong>.
+  </div>
+
+  <div class="section">
+    <h2>1. Données de départ</h2>
+    <p>Chaque ligne correspond à un élève. La valeur <code>"abs"</code> signifie que l'élève était absent à l'évaluation.</p>
+    <pre>serie1_brut = [&#x27;15.00&#x27;, &#x27;8.00&#x27;, &#x27;16.25&#x27;, &#x27;15.00&#x27;, &#x27;16.50&#x27;, &#x27;17.00&#x27;, &#x27;5.75&#x27;, &#x27;15.50&#x27;, &#x27;16.25&#x27;, &#x27;11.00&#x27;, &#x27;10.50&#x27;, &#x27;14.25&#x27;, &#x27;6.25&#x27;, &#x27;16.25&#x27;, &#x27;11.00&#x27;, &#x27;17.75&#x27;, &#x27;14.00&#x27;, &#x27;abs&#x27;, &#x27;7.00&#x27;, &#x27;15.00&#x27;, &#x27;13.75&#x27;, &#x27;13.75&#x27;, &#x27;8.50&#x27;, &#x27;18.00&#x27;, &#x27;7.25&#x27;, &#x27;16.50&#x27;, &#x27;19.50&#x27;, &#x27;13.75&#x27;, &#x27;13.50&#x27;, &#x27;15.00&#x27;, &#x27;abs&#x27;, &#x27;15.50&#x27;]
+
+serie2_brut = [&#x27;0.00&#x27;, &#x27;10.75&#x27;, &#x27;19.00&#x27;, &#x27;10.25&#x27;, &#x27;16.25&#x27;, &#x27;16.00&#x27;, &#x27;7.00&#x27;, &#x27;14.50&#x27;, &#x27;16.25&#x27;, &#x27;14.75&#x27;, &#x27;10.75&#x27;, &#x27;12.50&#x27;, &#x27;14.75&#x27;, &#x27;13.75&#x27;, &#x27;16.00&#x27;, &#x27;16.00&#x27;, &#x27;13.00&#x27;, &#x27;3.00&#x27;, &#x27;14.00&#x27;, &#x27;17.25&#x27;, &#x27;17.75&#x27;, &#x27;11.50&#x27;, &#x27;8.50&#x27;, &#x27;17.25&#x27;, &#x27;7.00&#x27;, &#x27;13.00&#x27;, &#x27;3.00&#x27;, &#x27;16.00&#x27;, &#x27;15.25&#x27;, &#x27;18.25&#x27;, &#x27;17.75&#x27;, &#x27;17.00&#x27;]
+
+serie3_brut = [&#x27;abs&#x27;, &#x27;3.50&#x27;, &#x27;13.75&#x27;, &#x27;4.50&#x27;, &#x27;7.25&#x27;, &#x27;10.75&#x27;, &#x27;2.50&#x27;, &#x27;7.00&#x27;, &#x27;11.75&#x27;, &#x27;7.00&#x27;, &#x27;6.50&#x27;, &#x27;11.50&#x27;, &#x27;3.00&#x27;, &#x27;9.25&#x27;, &#x27;11.00&#x27;, &#x27;10.50&#x27;, &#x27;11.50&#x27;, &#x27;3.25&#x27;, &#x27;7.50&#x27;, &#x27;6.75&#x27;, &#x27;12.00&#x27;, &#x27;4.00&#x27;, &#x27;3.50&#x27;, &#x27;11.25&#x27;, &#x27;0.00&#x27;, &#x27;12.50&#x27;, &#x27;0.00&#x27;, &#x27;9.25&#x27;, &#x27;5.00&#x27;, &#x27;9.00&#x27;, &#x27;10.50&#x27;, &#x27;9.75&#x27;]</pre>
+    <ol>
+      <li>Combien de listes de notes possède-t-on ?</li>
+      <li>Que signifie la valeur <code>"abs"</code> ?</li>
+      <li>Pourquoi doit-on nettoyer les données avant certains calculs ?</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>2. Nettoyage des trois séries</h2>
+    <pre>serie1 = []
+for valeur in serie1_brut:
+    if valeur != &quot;abs&quot;:
+        serie1.append(float(valeur))
+
+serie2 = []
+for valeur in serie2_brut:
+    if valeur != &quot;abs&quot;:
+        serie2.append(float(valeur))
+
+serie3 = []
+for valeur in serie3_brut:
+    if valeur != &quot;abs&quot;:
+        serie3.append(float(valeur))
+
+print(&quot;Effectif série 1 :&quot;, len(serie1))
+print(&quot;Effectif série 2 :&quot;, len(serie2))
+print(&quot;Effectif série 3 :&quot;, len(serie3))</pre>
+    <ol start="4">
+      <li>Donner l'effectif de chaque série après nettoyage.</li>
+      <li>Combien d'absents y a-t-il dans la série 1 ?</li>
+      <li>Combien d'absents y a-t-il dans la série 3 ?</li>
+      <li>La série 2 contient-elle des absences ?</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>3. Effectifs et fréquences</h2>
+    <p>On commence par la série 1. Ensuite, on pourra adapter le script aux deux autres séries.</p>
+    <pre>valeurs = sorted(set(serie1))
+N = len(serie1)
+
+print(&quot;Valeur | Effectif | Fréquence (%)&quot;)
+
+for v in valeurs:
+    effectif = serie1.count(v)
+    frequence = effectif / N
+    print(v, &quot;|&quot;, effectif, &quot;|&quot;, round(100 * frequence, 1))</pre>
+    <ol start="8">
+      <li>Quelle est la note la plus fréquente dans la série 1 ?</li>
+      <li>Adapter ce script à la série 2, puis à la série 3.</li>
+      <li>Dans quelle série certaines notes reviennent-elles le plus souvent ?</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>4. Moyenne, médiane, quartiles et écart interquartile</h2>
+    <pre>import math
+
+def mediane(liste):
+    data = sorted(liste)
+    N = len(data)
+    if N % 2 == 1:
+        return data[N // 2]
+    else:
+        return (data[N // 2 - 1] + data[N // 2]) / 2
+
+def quartiles(liste):
+    data = sorted(liste)
+    N = len(data)
+    rang_Q1 = math.ceil(N / 4)
+    rang_Q3 = math.ceil(3 * N / 4)
+    Q1 = data[rang_Q1 - 1]
+    Q3 = data[rang_Q3 - 1]
+    return Q1, Q3, Q3 - Q1
+
+for numero, serie in [(1, serie1), (2, serie2), (3, serie3)]:
+    moyenne = sum(serie) / len(serie)
+    med = mediane(serie)
+    Q1, Q3, IQR = quartiles(serie)
+    print(&quot;Série&quot;, numero)
+    print(&quot;  moyenne =&quot;, round(moyenne, 2))
+    print(&quot;  médiane =&quot;, med)
+    print(&quot;  Q1 =&quot;, Q1, &quot;Q3 =&quot;, Q3, &quot;écart interquartile =&quot;, IQR)</pre>
+    <ol start="11">
+      <li>Comparer les trois moyennes.</li>
+      <li>Comparer les trois médianes.</li>
+      <li>Quelle série semble la plus homogène ? Justifier avec l'écart interquartile.</li>
+      <li>Quelle série semble la plus difficile ?</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>5. Écart-type</h2>
+    <pre>def ecart_type(liste):
+    m = sum(liste) / len(liste)
+    variance = 0
+    for x in liste:
+        variance += (x - m) ** 2
+    variance = variance / len(liste)
+    return math.sqrt(variance)
+
+print(&quot;Écart-type série 1 :&quot;, round(ecart_type(serie1), 2))
+print(&quot;Écart-type série 2 :&quot;, round(ecart_type(serie2), 2))
+print(&quot;Écart-type série 3 :&quot;, round(ecart_type(serie3), 2))</pre>
+    <ol start="15">
+      <li>Donner l'écart-type de chaque série.</li>
+      <li>Quelle série a l'écart-type le plus grand ?</li>
+      <li>Que signifie un grand écart-type ?</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>6. Boîtes à moustaches</h2>
+    <pre>import matplotlib.pyplot as plt
+
+plt.figure(figsize=(9, 4))
+plt.boxplot([serie1, serie2, serie3], tick_labels=[&quot;Série 1&quot;, &quot;Série 2&quot;, &quot;Série 3&quot;], vert=False)
+
+plt.title(&quot;Comparaison des trois séries&quot;)
+plt.xlabel(&quot;Notes sur 20&quot;)
+plt.grid()
+plt.show()</pre>
+    <ol start="18">
+      <li>Comparer graphiquement les trois séries.</li>
+      <li>Quelle boîte est la plus large ?</li>
+      <li>Quelle boîte est la plus resserrée ?</li>
+    </ol>
+  </div>
+
+  <div class="section pagebreak">
+    <h2>7. Préparer les données pour K-means</h2>
+    <div class="note">
+      Chaque élève doit être décrit par ses <strong>trois notes</strong>. On garde donc seulement les élèves présents aux trois évaluations.
+    </div>
+    <pre>eleves = []
+
+for a, b, c in zip(serie1_brut, serie2_brut, serie3_brut):
+    if a != &quot;abs&quot; and b != &quot;abs&quot; and c != &quot;abs&quot;:
+        eleves.append([float(a), float(b), float(c)])
+
+print(&quot;Nombre d&#x27;élèves conservés :&quot;, len(eleves))
+print(&quot;Premiers triplets :&quot;, eleves[:5])</pre>
+    <ol start="21">
+      <li>Pourquoi faut-il retirer les lignes contenant <code>"abs"</code> ?</li>
+      <li>Que représente un triplet <code>[a, b, c]</code> ?</li>
+      <li>Combien d'élèves restent pour l'algorithme ?</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>8. Répartition graphique avant K-means</h2>
+    <pre>import matplotlib.pyplot as plt
+
+x = [ligne[0] for ligne in eleves]
+y = [ligne[1] for ligne in eleves]
+
+plt.figure(figsize=(7, 6))
+plt.scatter(x, y)
+
+plt.xlabel(&quot;Note à la série 1&quot;)
+plt.ylabel(&quot;Note à la série 2&quot;)
+plt.title(&quot;Répartition des élèves avant K-means&quot;)
+plt.grid()
+plt.show()</pre>
+    <ol start="24">
+      <li>Que représente un point sur ce graphique ?</li>
+      <li>Observe-t-on déjà des zones plus denses ?</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>9. Application de K-means avec scikit-learn</h2>
+    <p>Ici, on choisit finalement <strong>k = 2</strong>.</p>
+    <pre>from sklearn.cluster import KMeans
+
+kmeans = KMeans(n_clusters=2, n_init=20, random_state=0)
+kmeans.fit(eleves)
+
+labels = kmeans.labels_
+centres = kmeans.cluster_centers_
+
+print(&quot;Étiquette de chaque élève :&quot;, labels)
+print(&quot;Centres des 2 groupes :&quot;)
+for i, centre in enumerate(centres):
+    print(&quot;Groupe&quot;, i, &quot;:&quot;, [round(x, 2) for x in centre])</pre>
+    <ol start="26">
+      <li>Combien de groupes l'algorithme construit-il ?</li>
+      <li>Que représente le tableau <code>labels</code> ?</li>
+      <li>Que représentent les centres retournés ?</li>
+      <li>Les centres correspondent-ils plutôt à des profils faibles ou forts ?</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>10. Les trois projections 2D</h2>
+    <pre>fig, axes = plt.subplots(1, 3, figsize=(15, 4))
+
+for g in range(2):
+    x = [eleves[i][0] for i in range(len(eleves)) if labels[i] == g]
+    y = [eleves[i][1] for i in range(len(eleves)) if labels[i] == g]
+    axes[0].scatter(x, y, label=f&quot;Groupe {g}&quot;)
+for c in centres:
+    axes[0].scatter(c[0], c[1], marker=&quot;X&quot;, s=150)
+axes[0].set_title(&quot;Série 1 vs Série 2&quot;)
+axes[0].set_xlabel(&quot;S1&quot;)
+axes[0].set_ylabel(&quot;S2&quot;)
+axes[0].grid()
+
+for g in range(2):
+    x = [eleves[i][0] for i in range(len(eleves)) if labels[i] == g]
+    y = [eleves[i][2] for i in range(len(eleves)) if labels[i] == g]
+    axes[1].scatter(x, y, label=f&quot;Groupe {g}&quot;)
+for c in centres:
+    axes[1].scatter(c[0], c[2], marker=&quot;X&quot;, s=150)
+axes[1].set_title(&quot;Série 1 vs Série 3&quot;)
+axes[1].set_xlabel(&quot;S1&quot;)
+axes[1].set_ylabel(&quot;S3&quot;)
+axes[1].grid()
+
+for g in range(2):
+    x = [eleves[i][1] for i in range(len(eleves)) if labels[i] == g]
+    y = [eleves[i][2] for i in range(len(eleves)) if labels[i] == g]
+    axes[2].scatter(x, y, label=f&quot;Groupe {g}&quot;)
+for c in centres:
+    axes[2].scatter(c[1], c[2], marker=&quot;X&quot;, s=150)
+axes[2].set_title(&quot;Série 2 vs Série 3&quot;)
+axes[2].set_xlabel(&quot;S2&quot;)
+axes[2].set_ylabel(&quot;S3&quot;)
+axes[2].grid()
+
+plt.tight_layout()
+plt.show()</pre>
+    <ol start="30">
+      <li>Les groupes sont-ils visibles dans les trois projections ?</li>
+      <li>Dans quelle projection la séparation paraît-elle la plus nette ?</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>11. Vue 3D</h2>
+    <pre>from mpl_toolkits.mplot3d import Axes3D
+
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection=&quot;3d&quot;)
+
+for g in range(2):
+    x = [eleves[i][0] for i in range(len(eleves)) if labels[i] == g]
+    y = [eleves[i][1] for i in range(len(eleves)) if labels[i] == g]
+    z = [eleves[i][2] for i in range(len(eleves)) if labels[i] == g]
+    ax.scatter(x, y, z, label=f&quot;Groupe {g}&quot;)
+
+for i, c in enumerate(centres):
+    ax.scatter(c[0], c[1], c[2], marker=&quot;X&quot;, s=180, label=f&quot;Centre {i}&quot;)
+
+ax.set_xlabel(&quot;Série 1&quot;)
+ax.set_ylabel(&quot;Série 2&quot;)
+ax.set_zlabel(&quot;Série 3&quot;)
+ax.set_title(&quot;K-means en 3D avec k = 2&quot;)
+ax.legend()
+plt.show()</pre>
+    <ol start="32">
+      <li>Que représente un point en 3D ?</li>
+      <li>Pourquoi dit-on que K-means travaille ici en trois dimensions ?</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>12. Afficher les élèves par groupe</h2>
+    <pre>for groupe in range(2):
+    print()
+    print(&quot;===== Groupe&quot;, groupe, &quot;=====&quot;)
+    for i in range(len(eleves)):
+        if labels[i] == groupe:
+            print(eleves[i])</pre>
+    <ol start="34">
+      <li>Comparer les triplets de notes de chaque groupe.</li>
+      <li>Peut-on interpréter ces groupes comme deux profils d'élèves ?</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>13. Bilan</h2>
+    <ol start="36">
+      <li>Quel indicateur statistique te semble le plus utile pour comparer les trois évaluations ?</li>
+      <li>Qu'apporte K-means de plus qu'une simple moyenne ?</li>
+      <li>Pourquoi est-il intéressant d'utiliser les trois notes à la fois ?</li>
+      <li>Donner un avantage et une limite de ce regroupement automatique.</li>
+    </ol>
+  </div>
+</div>
+</body>
+</html>
