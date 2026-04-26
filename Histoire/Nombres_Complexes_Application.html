@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>TP - Équation du troisième degré et nombres complexes</title>
+<style>
+  @page {
+    size: A4;
+    margin: 1.6cm;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.55;
+    margin: 0;
+    padding: 30px;
+    color: #222;
+    background: #f7f8fb;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 38px 46px;
+    border-radius: 18px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.10);
+  }
+
+  h1 {
+    color: #1e5aa8;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    color: #c2185b;
+    margin-top: 34px;
+    border-bottom: 2px solid #f0c4d8;
+    padding-bottom: 5px;
+  }
+
+  h3 {
+    color: #1e5aa8;
+    margin-top: 24px;
+  }
+
+  .intro {
+    background: #eef5ff;
+    border-left: 6px solid #1e5aa8;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin: 25px 0;
+  }
+
+  .important {
+    background: #fff8e1;
+    border-left: 6px solid #f9a825;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin: 22px 0;
+  }
+
+  .question {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin: 14px 0;
+  }
+
+  .math {
+    text-align: center;
+    font-size: 1.15em;
+    margin: 14px 0;
+  }
+
+  .blank {
+    height: 38px;
+    border-bottom: 1px dotted #aaa;
+    margin: 8px 0 16px;
+  }
+
+  .smallblank {
+    height: 24px;
+    border-bottom: 1px dotted #aaa;
+    margin: 8px 0 14px;
+  }
+
+  .page-break {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .footer-note {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  code {
+    background: #eee;
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+
+  @media print {
+    body {
+      background: white;
+      padding: 0;
+    }
+    .page {
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0;
+    }
+    .question, .intro, .important {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    h2, h3 {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+  }
+</style>
+
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)'], ['$', '$']], displayMath: [['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body>
+<div class="page">
+
+<h1>TP — Une équation du troisième degré<br>et les nombres complexes</h1>
+
+<div class="intro">
+  <strong>Objectif :</strong> comprendre pourquoi les nombres complexes peuvent apparaître
+  naturellement dans la résolution d’une équation du troisième degré, même lorsque la solution finale est réelle.
+</div>
+
+<h2>1. L’équation étudiée</h2>
+
+<p>On considère l’équation :</p>
+
+<div class="math">
+\[
+x^3 = 15x + 4
+\]
+</div>
+
+<p>c’est-à-dire :</p>
+
+<div class="math">
+\[
+x^3 - 15x - 4 = 0
+\]
+</div>
+
+<div class="question">
+  <strong>Question 1.</strong> Vérifier que \(x=4\) est solution de l’équation.
+  <div class="blank"></div>
+</div>
+
+<h2>2. Changement de variable</h2>
+
+<p>On pose :</p>
+
+<div class="math">
+\[
+x = u+v
+\]
+</div>
+
+<p>
+Cette écriture n’est pas unique : pour un même nombre \(x\), il existe une infinité de couples
+\((u;v)\) tels que \(x=u+v\).
+</p>
+
+<div class="important">
+  <strong>Idée importante :</strong> comme on a une certaine liberté dans le choix de \(u\) et \(v\),
+  on pourra imposer une condition supplémentaire pour simplifier les calculs.
+</div>
+
+<div class="question">
+  <strong>Question 2.</strong> Développer \((u+v)^3\).
+  <div class="blank"></div>
+</div>
+
+<p>On utilise l’identité :</p>
+
+<div class="math">
+\[
+(u+v)^3 = u^3 + v^3 + 3uv(u+v)
+\]
+</div>
+
+<p>Comme \(x=u+v\), on obtient :</p>
+
+<div class="math">
+\[
+x^3 = u^3 + v^3 + 3uv(u+v)
+\]
+</div>
+
+<h2>3. Remplacement dans l’équation</h2>
+
+<p>On remplace dans l’équation :</p>
+
+<div class="math">
+\[
+x^3 = 15x+4
+\]
+</div>
+
+<p>Comme \(x=u+v\), cela donne :</p>
+
+<div class="math">
+\[
+u^3+v^3+3uv(u+v)=15(u+v)+4
+\]
+</div>
+
+<p>On regroupe les termes :</p>
+
+<div class="math">
+\[
+u^3+v^3+(3uv-15)(u+v)-4=0
+\]
+</div>
+
+<h2>4. Choix stratégique</h2>
+
+<p>
+On veut simplifier l’expression. On choisit donc d’annuler le coefficient de \((u+v)\) :
+</p>
+
+<div class="math">
+\[
+3uv-15=0
+\]
+</div>
+
+<div class="question">
+  <strong>Question 3.</strong> En déduire la valeur de \(uv\).
+  <div class="smallblank"></div>
+</div>
+
+<p>On obtient :</p>
+
+<div class="math">
+\[
+uv=5
+\]
+</div>
+
+<p>Avec ce choix, l’équation devient simplement :</p>
+
+<div class="math">
+\[
+u^3+v^3=4
+\]
+</div>
+
+<div class="important">
+  On cherche donc maintenant deux nombres \(u\) et \(v\) tels que :
+  \[
+  \begin{cases}
+  u^3+v^3=4\\
+  uv=5
+  \end{cases}
+  \]
+</div>
+
+<h2>5. Apparition de \(\sqrt{-1}\)</h2>
+
+<p>
+On introduit le nombre \(i\), défini par :
+</p>
+
+<div class="math">
+\[
+i^2=-1
+\]
+</div>
+
+<p>On propose alors le couple :</p>
+
+<div class="math">
+\[
+u=2+i
+\qquad \text{et} \qquad
+v=2-i
+\]
+</div>
+
+<div class="question">
+  <strong>Question 4.</strong> Calculer \(uv=(2+i)(2-i)\).
+  <div class="blank"></div>
+</div>
+
+<p>On obtient :</p>
+
+<div class="math">
+\[
+uv=(2+i)(2-i)=4-i^2=4+1=5
+\]
+</div>
+
+<p>La première condition est donc bien vérifiée :</p>
+
+<div class="math">
+\[
+uv=5
+\]
+</div>
+
+<div class="question">
+  <strong>Question 5.</strong> Calculer \((2+i)^3\).
+  <div class="blank"></div>
+</div>
+
+<p>On trouve :</p>
+
+<div class="math">
+\[
+(2+i)^3=2+11i
+\]
+</div>
+
+<div class="question">
+  <strong>Question 6.</strong> Calculer \((2-i)^3\).
+  <div class="blank"></div>
+</div>
+
+<p>On trouve :</p>
+
+<div class="math">
+\[
+(2-i)^3=2-11i
+\]
+</div>
+
+<p>Donc :</p>
+
+<div class="math">
+\[
+u^3+v^3=(2+11i)+(2-11i)=4
+\]
+</div>
+
+<p>La deuxième condition est aussi vérifiée :</p>
+
+<div class="math">
+\[
+u^3+v^3=4
+\]
+</div>
+
+<h2>6. Retour à \(x\)</h2>
+
+<p>Comme \(x=u+v\), on obtient :</p>
+
+<div class="math">
+\[
+x=(2+i)+(2-i)
+\]
+</div>
+
+<p>Les parties imaginaires disparaissent :</p>
+
+<div class="math">
+\[
+x=4
+\]
+</div>
+
+<div class="important">
+  <strong>Conclusion :</strong> les nombres complexes sont apparus dans les calculs intermédiaires,
+  mais la solution finale est un nombre réel.
+</div>
+
+<h2>7. Ce qu’il faut retenir</h2>
+
+<p>
+Dans les réels, la fonction cube est strictement croissante. Ainsi, une équation du type :
+</p>
+
+<div class="math">
+\[
+u^3=a
+\]
+</div>
+
+<p>a une seule solution réelle.</p>
+
+<p>
+Mais dans les complexes, une équation du type :
+</p>
+
+<div class="math">
+\[
+u^3=z
+\]
+</div>
+
+<p>a en général plusieurs solutions complexes.</p>
+
+<div class="important">
+  Cela montre que les règles connues dans les réels ne se généralisent pas toujours directement
+  aux nombres complexes.
+</div>
+
+<h2>8. Bilan à compléter</h2>
+
+<div class="question">
+  Les nombres complexes permettent de résoudre certaines équations qui font apparaître
+  <div class="smallblank"></div>
+
+  Dans cet exemple, les nombres \(i\) et \(-i\) apparaissent dans les calculs, mais
+  <div class="smallblank"></div>
+
+  La solution réelle obtenue est :
+  <div class="smallblank"></div>
+</div>
+
+<div class="page-break"></div>
+
+<h1>Corrigé rapide</h1>
+
+<h2>Question 1</h2>
+<div class="math">
+\[
+4^3-15\times 4-4=64-60-4=0
+\]
+</div>
+<p>Donc \(x=4\) est solution.</p>
+
+<h2>Question 2</h2>
+<div class="math">
+\[
+(u+v)^3=u^3+3u^2v+3uv^2+v^3
+\]
+</div>
+
+<div class="math">
+\[
+(u+v)^3=u^3+v^3+3uv(u+v)
+\]
+</div>
+
+<h2>Question 3</h2>
+<div class="math">
+\[
+3uv-15=0
+\]
+</div>
+
+<div class="math">
+\[
+3uv=15
+\]
+</div>
+
+<div class="math">
+\[
+uv=5
+\]
+</div>
+
+<h2>Question 4</h2>
+<div class="math">
+\[
+(2+i)(2-i)=4-2i+2i-i^2=4-i^2=5
+\]
+</div>
+
+<h2>Question 5</h2>
+<div class="math">
+\[
+(2+i)^2=4+4i+i^2=3+4i
+\]
+</div>
+
+<div class="math">
+\[
+(2+i)^3=(3+4i)(2+i)=6+3i+8i+4i^2
+\]
+</div>
+
+<div class="math">
+\[
+(2+i)^3=6+11i-4=2+11i
+\]
+</div>
+
+<h2>Question 6</h2>
+<div class="math">
+\[
+(2-i)^2=4-4i+i^2=3-4i
+\]
+</div>
+
+<div class="math">
+\[
+(2-i)^3=(3-4i)(2-i)=6-3i-8i+4i^2
+\]
+</div>
+
+<div class="math">
+\[
+(2-i)^3=6-11i-4=2-11i
+\]
+</div>
+
+<h2>Conclusion</h2>
+<div class="math">
+\[
+u^3+v^3=(2+11i)+(2-11i)=4
+\]
+</div>
+
+<div class="math">
+\[
+uv=5
+\]
+</div>
+
+<div class="math">
+\[
+x=u+v=(2+i)+(2-i)=4
+\]
+</div>
+
+<p>
+Les nombres complexes interviennent dans les calculs intermédiaires, mais la solution finale est réelle.
+</p>
+
+<div class="footer-note">
+TP — Nombres complexes et équation du troisième degré
+</div>
+
+</div>
+</body>
+</html>
